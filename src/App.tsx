@@ -25,6 +25,9 @@ function App() {
 		"id": 4,
 		"joke": "Chuck Norris does not own a stove, oven, or microwave, because revenge is a dish best served cold.",
 	}])
+	const filteredJokes = jokes.filter(joke =>
+		joke.id === 3
+		);
 
 	return (
 		<div className="App">
@@ -38,7 +41,6 @@ function App() {
 			roundhousekicks = {roundHouseKicks}/>
 
 			<h2>Jokes: </h2>
-			
 			 <ul>
 				{
 					jokes.map((item) => 
@@ -46,6 +48,15 @@ function App() {
 					)
 				}
 			 </ul>
+
+			 <h3>Filtered Jokes: </h3>
+			<ul>
+				{
+					filteredJokes.map((item) =>
+					<li key={item.id}> {item.joke} </li>
+					)
+				}
+			</ul>
 
 		</div>
 	);
