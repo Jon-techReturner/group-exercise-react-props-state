@@ -30,12 +30,22 @@ function App() {
 		<div className="App">
 
 			<h1>React props and state</h1>
-			<ChuckCard />
+			<ChuckCard greeting = {chuckGreeting}
+			image = {Image} />
 
 			<h2>Chuck Info: </h2>
-			<ChuckInfo />
+			<ChuckInfo whales = {whalesSaved}
+			roundhousekicks = {roundHouseKicks}/>
 
 			<h2>Jokes: </h2>
+			
+			 <ul>
+				{
+					jokes.map((item) => 
+					<li key={item.id} > {item.joke} </li>
+					)
+				}
+			 </ul>
 
 		</div>
 	);
