@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import ChuckCard from './components/chuck_card';
 import ChuckInfo from './components/chuck_info';
+import ChuckJokes from './components/chuck_jokes';
 import Joke from './joke';
 
 function App() {
@@ -25,9 +26,7 @@ function App() {
 		"id": 4,
 		"joke": "Chuck Norris does not own a stove, oven, or microwave, because revenge is a dish best served cold.",
 	}])
-	const filteredJokes = jokes.filter(joke =>
-		joke.id === 3
-		);
+	const filteredJokes = jokes.filter((joke) => joke.id === 3);
 
 	return (
 		<div className="App">
@@ -41,25 +40,12 @@ function App() {
 			roundhousekicks = {roundHouseKicks}/>
 
 			<h2>Jokes: </h2>
-			 <ul>
-				{
-					jokes.map((item) => 
-					<li key={item.id} > {item.joke} </li>
-					)
-				}
-			 </ul>
+			<ChuckJokes jokes={jokes} />
 
 			 <h3>Filtered Jokes: </h3>
-			<ul>
-				{
-					filteredJokes.map((item) =>
-					<li key={item.id}> {item.joke} </li>
-					)
-				}
-			</ul>
+			 <ChuckJokes jokes={filteredJokes}/>
 
 		</div>
 	);
 }
-
 export default App;
